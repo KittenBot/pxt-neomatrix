@@ -42,6 +42,17 @@ namespace neomatrix {
         rgbBright = bright & 0xff;
     }
 
+    //% blockId=neomat_shift block="Matrix Shift %s delay %ms ms"
+    export function ShiftMat(s: number, ms: number): void {
+        if (matType == MatType.m32x8) {
+            s = s % 32;
+            rgbBuf.rotate(-s * 8 * 3 * 2);
+            ws2812b.sendBuffer(rgbBuf, rgbPin);
+        }
+        // todo: support 16x16 shift
+        basic.pause(ms)
+    }
+
     //% blockId=neomat_clear block="Clear"
     //% blockGap=70
     export function NeoMatClear(): void {
