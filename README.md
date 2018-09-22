@@ -1,14 +1,26 @@
 # Neo Matrix for makecode
 
-Extension for NeoMatrix Display by Kittenbot Team
+An easy way to show anmations or images on neopixel matrix panel.
 
-## Feature
+![](./images/title.png)
 
+## How to use
 
+### NOTE: Makecode official don't support extension addons right now, you may need Makecode offline V3.2 or upper bundled by Kittenbot Team. 
+
+Load this extension to makecode editor and select **NeoMatrix Editor**, it will navigate to our website paint editor.  
+
+![](./images/editpanel.png)
+
+After finished editing the animation frames, please press **pxt-neomatrix** in the bottom left. You may find a newly added block **show frame** in makecode.
+
+![](./images/makecode.png)
+
+Check the final effect
+
+![](./images/run.gif)
 
 ----------
-
-For more infomation please visit [http://kittenbot.cc/bbs/](http://kittenbot.cc/bbs/ "Kittenbot BBS")
 
 ## License
 
