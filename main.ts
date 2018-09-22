@@ -15,7 +15,7 @@ namespace neomatrix {
     let rgbBright: number = 30;
 
     // no hex literal support for microbit v1
-    function hexstr2buf(a: string): void {
+    export function hexstr2buf(a: string): void {
         for (let i = 0; i < a.length; i += 2) {
             let rgb = (a.charCodeAt(i) % 32 + 9) % 25 * 16 + (a.charCodeAt(i + 1) % 32 + 9) % 25;
             rgbBuf[i / 2] = (rgb * rgbBright) >> 8;
@@ -34,6 +34,7 @@ namespace neomatrix {
     export function SetRGBPin(pin: DigitalPin, mat: MatType): void {
         rgbPin = pin;
         matType = mat;
+        NeoMatClear();
     }
 
     //% blockId=neomat_setbright block="Matrix Brightness %bright"
