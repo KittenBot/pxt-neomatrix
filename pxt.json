@@ -1,6 +1,6 @@
 {
     "name": "neomatrix",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "NeoMatrix Display",
     "license": "MIT",
     "dependencies": {
@@ -15,6 +15,6 @@
     "extension": {
         "namespace": "neomatrix",
         "label": "NeoMatrix Editor",
-        "localUrl": "http://kittenbot.cn/#/paint"
+        "localUrl": "http://127.0.0.1:3006/#/paint"
     }
 }

@@ -14,6 +14,26 @@ namespace neomatrix {
     let matType: MatType;
     let rgbBright: number = 30;
 
+    const PortDigi = [
+        [DigitalPin.P8, DigitalPin.P0],
+        [DigitalPin.P12, DigitalPin.P1],
+        [DigitalPin.P13, DigitalPin.P2],
+        [DigitalPin.P15, DigitalPin.P14],
+        [DigitalPin.P6, DigitalPin.P3],
+        [DigitalPin.P7, DigitalPin.P4],
+        [DigitalPin.P9, DigitalPin.P10]
+    ]
+
+    export enum Ports {
+        PORT1 = 0,
+        PORT2 = 1,
+        PORT3 = 2,
+        PORT4 = 3,
+        PORT5 = 4,
+        PORT6 = 5,
+        PORT7 = 6
+    }
+    
     // no hex literal support for microbit v1
     export function hexstr2buf(a: string): void {
         for (let i = 0; i < a.length; i += 2) {
@@ -33,6 +53,13 @@ namespace neomatrix {
     //% blockId=neomat_setpin block="Matrix Pin %pin %mat"
     export function SetRGBPin(pin: DigitalPin, mat: MatType): void {
         rgbPin = pin;
+        matType = mat;
+        NeoMatClear();
+    }
+
+    //% blockId=neomat_setpbport block="Powerbrick %port %mat"
+    export function SetPowerbrickPort(port: Ports, mat: MatType): void {
+        rgbPin = PortDigi[port][0];
         matType = mat;
         NeoMatClear();
     }
