@@ -1,0 +1,7 @@
+{
+    "neomatrix.neomat_setpin|block": "矩阵屏引脚 %pin %mat",
+    "neomatrix.neomat_setpbport|block": "Powerbrick %port %mat",
+    "neomatrix.neomat_setbright|block": "矩阵屏亮度 %bright",
+    "neomatrix.neomat_shift|block": "像素移动 %s delay %ms ms",
+    "neomatrix.neomat_clear|block": "清屏"
+}

@@ -6,7 +6,7 @@ An easy way to show anmations or images on neopixel matrix panel.
 
 ## How to use
 
-### NOTE: Makecode official don't support extension addons right now, you may need Makecode offline V3.2 or upper bundled by Kittenbot Team. 
+### NOTE: Makecode official don't fully support extension addons right now, you may need makecode editor served by kittenbot: [http://makecode.kittenbot.cn/index.html](http://makecode.kittenbot.cn/index.html)
 
 Load this extension to makecode editor and select **NeoMatrix Editor**, it will navigate to our website paint editor.  
 
