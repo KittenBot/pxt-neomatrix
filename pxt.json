@@ -10,7 +10,7 @@
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh/neomatrix-strings.json"
+        "_locales/zh-cn/neomatrix-strings.json"
     ],
     "public": true,
     "extension": {

@@ -1,0 +1,7 @@
+{
+    "neomatrix.SetRGBPin|block": "矩阵屏引脚 %pin %mat",
+    "neomatrix.SetPowerbrickPort|block": "Powerbrick %port %mat",
+    "neomatrix.SetBright|block": "矩阵屏亮度 %bright",
+    "neomatrix.ShiftMat|block": "像素移动 %s delay %ms ms",
+    "neomatrix.NeoMatClear|block": "清屏"
+}
