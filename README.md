@@ -6,7 +6,13 @@ An easy way to show anmations or images on neopixel matrix panel.
 
 ## How to use
 
-### NOTE: Makecode official don't fully support extension addons right now, you may need makecode editor served by kittenbot: [http://makecode.kittenbot.cn/index.html](http://makecode.kittenbot.cn/index.html)
+### Important: You have to enable 'editor extension ' from experiment tab (setting->about->experiment)
+
+![image](https://user-images.githubusercontent.com/3390845/66251543-c9918500-e783-11e9-9dc0-e4f3c41db4ec.png)
+
+click the 'NeoMatrix editor" in then extension flyout
+
+It may take some while to load the extension code from github,I confirmed myself it will work with latest beta editor
 
 Load this extension to makecode editor and select **NeoMatrix Editor**, it will navigate to our website paint editor.  
 
