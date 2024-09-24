@@ -1,21 +1,36 @@
 {
     "name": "neomatrix",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "description": "NeoMatrix Display",
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "ws2812b": "github:Microsoft/pxt-ws2812b#v0.0.4"
+        "ws2812b": "github:Microsoft/pxt-ws2812b#v0.0.4",
+        "microphone": "*"
     },
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh-cn/neomatrix-strings.json"
+        "_locales/zh-cn/neomatrix-strings.json",
+        "targetconfig.json"
     ],
     "public": true,
+    "targetVersions": {
+        "target": "7.0.42",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj",
     "extension": {
         "namespace": "neomatrix",
         "label": "NeoMatrix Editor",
         "localUrl": "https://kittenbot.github.io/pxt-neomatrix/index.html"
+    },
+    "packages": {
+        "approvedEditorExtensionUrls": [
+            "https://kittenbot.github.io/pxt-neomatrix/index.html"
+        ]
     }
 }

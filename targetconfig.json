@@ -1,0 +1,7 @@
+{
+    "packages": {
+        "approvedEditorExtensionUrls": [
+            "https://kittenbot.github.io/pxt-neomatrix/index.html"
+        ]
+    }
+}
