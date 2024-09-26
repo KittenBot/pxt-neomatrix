@@ -25,12 +25,19 @@ namespace neomatrix {
     ]
 
     export enum Ports {
+        //% block=port1
         PORT1 = 0,
+        //% block=port2
         PORT2 = 1,
+        //% block=port3
         PORT3 = 2,
+        //% block=port4
         PORT4 = 3,
+        //% block=port5
         PORT5 = 4,
+        //% block=port6
         PORT6 = 5,
+        //% block=port7
         PORT7 = 6
     }
     
@@ -50,27 +57,27 @@ namespace neomatrix {
         m16x16 = 1
     }
 
-    //% blockId=neomat_setpin block="Matrix Pin %pin %mat"
-    export function SetRGBPin(pin: DigitalPin, mat: MatType): void {
+    //% blockId=neomatrix_set_pin block="init matrix pin %pin %mat"
+    export function setPin(pin: DigitalPin, mat: MatType): void {
         rgbPin = pin;
         matType = mat;
-        NeoMatClear();
+        clear();
     }
 
-    //% blockId=neomat_setpbport block="Powerbrick %port %mat"
-    export function SetPowerbrickPort(port: Ports, mat: MatType): void {
+    //% blockId=neomatrix_set_powerbrick_port block="init powerbrick %port %mat"
+    export function setPowerbrickPort(port: Ports, mat: MatType): void {
         rgbPin = PortDigi[port][0];
         matType = mat;
-        NeoMatClear();
+        clear();
     }
 
-    //% blockId=neomat_setbright block="Matrix Brightness %bright"
-    export function SetBright(bright: number): void {
+    //% blockId=neomatrix_set_bright block="matrix brightness %bright"
+    export function setBright(bright: number): void {
         rgbBright = bright & 0xff;
     }
 
-    //% blockId=neomat_shift block="Matrix Shift %s delay %ms ms"
-    export function ShiftMat(s: number, ms: number): void {
+    //% blockId=neomatrix_shift_mat block="matrix shift %s delay %ms ms"
+    export function shiftMat(s: number, ms: number): void {
         if (matType == MatType.m32x8) {
             s = s % 32;
             rgbBuf.rotate(-s * 8 * 3 * 2);
@@ -80,12 +87,12 @@ namespace neomatrix {
         basic.pause(ms)
     }
 
-    //% blockId=neomat_clear block="Clear"
+    //% blockId=neomatrix_clear block="clear"
     //% blockGap=70
-    export function NeoMatClear(): void {
+    export function clear(): void {
         rgbBuf.fill(0);
         ws2812b.sendBuffer(rgbBuf, rgbPin);
     }
-
+    
 
 }
