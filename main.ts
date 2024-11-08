@@ -11,7 +11,7 @@ namespace neomatrix {
 
     let rgbBuf: Buffer = pins.createBuffer(RGB_PIX * 3);
     let rgbPin: DigitalPin;
-    let matType: MatType;
+    let matType: number = 0;//TODO: later support for more matrix
     let rgbBright: number = 30;
 
     const PortDigi = [
@@ -50,35 +50,39 @@ namespace neomatrix {
         ws2812b.sendBuffer(rgbBuf, rgbPin);
     }
 
-    export enum MatType {
-        //% block=32x8
-        m32x8 = 0,
-        //% block=16x16
-        m16x16 = 1
-    }
+    // export enum MATRIXType {
+    //     //% block=32x8
+    //     M32x8 = 0,
+    //     //% block=16x16
+    //     M16x16 = 1
+    // }
 
-    //% blockId=neomatrix_set_pin block="init matrix pin %pin %mat"
-    export function setPin(pin: DigitalPin, mat: MatType): void {
+    //% blockId=neomatrix_set_pin block="init matrix pin %pin"
+    //% weight=99
+    export function setPin(pin: DigitalPin): void {
         rgbPin = pin;
-        matType = mat;
+        matType = 0;
         clear();
     }
 
-    //% blockId=neomatrix_set_powerbrick_port block="init powerbrick %port %mat"
-    export function setPowerbrickPort(port: Ports, mat: MatType): void {
+    //% blockId=neomatrix_set_powerbrick_port block="init powerbrick %port"
+    //% weight=98
+    export function setPowerbrickPort(port: Ports): void {
         rgbPin = PortDigi[port][0];
-        matType = mat;
+        matType = 0;
         clear();
     }
 
     //% blockId=neomatrix_set_bright block="matrix brightness %bright"
-    export function setBright(bright: number): void {
+    //% weight=97
+    export function setBrightness(bright: number): void {
         rgbBright = bright & 0xff;
     }
 
     //% blockId=neomatrix_shift_mat block="matrix shift %s delay %ms ms"
-    export function shiftMat(s: number, ms: number): void {
-        if (matType == MatType.m32x8) {
+    //% weight=96
+    export function shiftMatrix(s: number, ms: number): void {
+        if (matType == 0) {
             s = s % 32;
             rgbBuf.rotate(-s * 8 * 3 * 2);
             ws2812b.sendBuffer(rgbBuf, rgbPin);
@@ -88,7 +92,7 @@ namespace neomatrix {
     }
 
     //% blockId=neomatrix_clear block="clear"
-    //% blockGap=70
+    //% weight=95
     export function clear(): void {
         rgbBuf.fill(0);
         ws2812b.sendBuffer(rgbBuf, rgbPin);

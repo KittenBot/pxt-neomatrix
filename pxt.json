@@ -11,12 +11,11 @@
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh-cn/neomatrix-strings.json",
-        "targetconfig.json"
+        "_locales/zh-cn/neomatrix-strings.json"
     ],
     "public": true,
     "targetVersions": {
-        "target": "7.0.42",
+        "target": "7.0.51",
         "targetId": "microbit"
     },
     "supportedTargets": [
@@ -25,8 +24,7 @@
     "preferredEditor": "tsprj",
     "extension": {
         "namespace": "neomatrix",
-        "label": "NeoMatrix Editor",
-        "localUrl": "https://kittenbot.github.io/pxt-neomatrix/index.html"
+        "label": "NeoMatrix Editor"
     },
     "packages": {
         "approvedEditorExtensionUrls": [
