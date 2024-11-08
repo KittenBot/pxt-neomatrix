@@ -5,7 +5,7 @@ load dependency
 "neomatrix": "file:../pxt-neomatrix"
 */
 
-//% color="#13c2c2" weight=10 icon="\uf17a"
+//% color="#13c2c2" weight=10 icon="\uf00a"
 namespace neomatrix {
     const RGB_PIX = 256
 
